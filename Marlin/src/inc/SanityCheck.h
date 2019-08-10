@@ -570,6 +570,16 @@ static_assert(Y_MAX_LENGTH >= Y_BED_SIZE, "Movement bounds (Y_MIN_POS, Y_MAX_POS
 #endif
 
 /**
+ * Host Action Command
+ */
+#if ENABLED(BIGTREETECH_TFT_LCD) && DISABLED(HOST_ACTION_COMMANDS)
+  #error "HOST_ACTION_COMMANDS required for BIGTREETECH_TFT_LCD display."
+#endif
+#if ENABLED(BIGTREETECH_TFT_LCD) && DISABLED(HOST_PROMPT_SUPPORT)
+  #error "HOST_PROMPT_SUPPORT required for BIGTREETECH_TFT_LCD display."
+#endif
+
+/**
  * SD File Sorting
  */
 #if ENABLED(SDCARD_SORT_ALPHA)

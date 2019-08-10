@@ -30,8 +30,8 @@
 
 #if ENABLED(ADVANCED_PAUSE_FEATURE)
   #include "pause.h"
-  #include "../gcode/queue.h"
 #endif
+#include "../gcode/queue.h"
 
 #if HAS_FILAMENT_SENSOR
   #include "runout.h"
@@ -60,6 +60,9 @@ void host_action(const char * const pstr, const bool eol) {
 #endif
 #ifdef ACTION_ON_CANCEL
   void host_action_cancel() { host_action(PSTR(ACTION_ON_CANCEL)); }
+#endif
+#ifdef ACTION_DISCONNET
+  void host_action_disconnect() { host_action(PSTR(ACTION_DISCONNET)); }
 #endif
 
 #if ENABLED(HOST_PROMPT_SUPPORT)
@@ -109,6 +112,7 @@ void host_action(const char * const pstr, const bool eol) {
     const PromptReason hpr = host_prompt_reason;
     host_prompt_reason = PROMPT_NOT_DEFINED;
     switch (hpr) {
+      #if HAS_FILAMENT_SENSOR
       case PROMPT_FILAMENT_RUNOUT:
         msg = PSTR("FILAMENT_RUNOUT");
         if (response == 0) {
@@ -142,6 +146,7 @@ void host_action(const char * const pstr, const bool eol) {
           #endif
         }
         break;
+      #endif  
       case PROMPT_USER_CONTINUE:
         #if HAS_RESUME_CONTINUE
           wait_for_user = false;
