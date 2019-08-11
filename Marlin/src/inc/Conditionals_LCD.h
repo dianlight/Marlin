@@ -368,9 +368,20 @@
 #endif
 
 // Extensible UI serial touch screens. (See src/lcd/extensible_ui)
-#if EITHER(MALYAN_LCD, DGUS_LCD)
+#if ANY(MALYAN_LCD, DGUS_LCD, BIGTREETECH_TFT_LCD)
   #define IS_EXTUI
   #define EXTENSIBLE_UI
+#endif
+
+// BigTreeTech TFT LCD required
+#if ENABLED(BIGTREETECH_TFT_LCD)
+  #ifndef HOST_PROMPT_SUPPORT
+    #define BIGTREETECH_ONLY_HOST_PROMPT_SUPPORT
+    #define HOST_PROMPT_SUPPORT
+  #endif
+  #ifndef HOST_ACTION_COMMANDS
+    #define HOST_ACTION_COMMANDS
+  #endif
 #endif
 
 // Aliases for LCD features

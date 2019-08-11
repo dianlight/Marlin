@@ -561,11 +561,11 @@ void wait_for_confirmation(const bool is_reload/*=false*/, const int8_t max_beep
       const millis_t nozzle_timeout = (millis_t)(PAUSE_PARK_NOZZLE_TIMEOUT) * 1000UL;
 
       HOTEND_LOOP() thermalManager.hotend_idle[e].start(nozzle_timeout);
-      #if ENABLED(HOST_PROMPT_SUPPORT)
-        host_prompt_do(PROMPT_USER_CONTINUE, PSTR("Reheat Done"), PSTR("Continue"));
-      #endif
       #if ENABLED(EXTENSIBLE_UI)
         ExtUI::onUserConfirmRequired("Reheat finished.");
+      #endif
+      #if ENABLED(HOST_PROMPT_SUPPORT)
+        host_prompt_do(PROMPT_USER_CONTINUE, PSTR("Reheat Done"), PSTR("Continue"));
       #endif
       wait_for_user = true;
       nozzle_timed_out = false;

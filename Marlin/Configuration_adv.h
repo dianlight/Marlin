@@ -657,6 +657,11 @@
   #endif
 #endif
 
+#if ENABLED(BIGTREETECH_TFT_LCD)
+  #define TFT_SERIAL SERIAL_PORT    // Serial port where TFT is attached
+#endif
+
+
 // @section extras
 
 // minimum time in microseconds that a movement needs to take if the buffer is emptied.

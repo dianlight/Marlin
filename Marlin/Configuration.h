@@ -2070,6 +2070,13 @@
 //
 //#define EXTENSIBLE_UI
 
+//
+// Touch-screen LCD from BigTreeTech TFT. 
+// ( Note: The LCD need a custom firmware to support M118 action command!)
+// See: https://github.com/dianlight/BIGTREETECH-TFT35-V1.2/wiki/Roadmap
+//
+#define BIGTREETECH_TFT_LCD
+
 //=============================================================================
 //=============================== Graphical TFTs ==============================
 //=============================================================================
