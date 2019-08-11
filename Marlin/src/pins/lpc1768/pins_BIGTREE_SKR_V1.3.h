@@ -56,7 +56,8 @@
 // Filament Runout Sensor
 //
 #ifndef FIL_RUNOUT_PIN
-  #define FIL_RUNOUT_PIN   P1_28
+  #define FIL_RUNOUT_PIN   P1_28  // X_MAX
+  #define FIL_RUNOUT2_PIN  P1_26  // Y_MAX
 #endif
 
 //
