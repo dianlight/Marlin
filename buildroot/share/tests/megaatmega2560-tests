@@ -54,7 +54,7 @@ opt_set TEMP_SENSOR_3 20
 opt_set TEMP_SENSOR_4 1000
 opt_set TEMP_SENSOR_BED 1
 opt_enable AUTO_BED_LEVELING_UBL RESTORE_LEVELING_AFTER_G28 DEBUG_LEVELING_FEATURE G26_MESH_EDITING ENABLE_LEVELING_FADE_HEIGHT SKEW_CORRECTION \
-           REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER LIGHTWEIGHT_UI STATUS_MESSAGE_SCROLLING \
+           REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER LIGHTWEIGHT_UI STATUS_MESSAGE_SCROLLING BOOT_MARLIN_LOGO_SMALL BOOT_MARLIN_LOGO_ANIMATED \
            SDSUPPORT SDCARD_SORT_ALPHA USB_FLASH_DRIVE_SUPPORT SCROLL_LONG_FILENAMES \
            EEPROM_SETTINGS EEPROM_CHITCHAT GCODE_MACROS CUSTOM_USER_MENUS \
            MULTI_NOZZLE_DUPLICATION JUNCTION_DEVIATION LIN_ADVANCE QUICK_HOME \
@@ -249,11 +249,11 @@ exec_test $1 $2 "Many less common options"
 #
 #restore_configs
 #opt_enable REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER SDSUPPORT
-#for lang in an bg ca zh_CN zh_TW cz da de el el-gr en es eu fi fr gl hr it jp-kana nl pl pt pt-br ru sk tr uk test; do opt_set LCD_LANGUAGE $lang; echo "compile with language $lang ..."; exec_test $1 $2 "Stuff"; done
+#for lang in an bg ca cz da de el el-gr en es eu fi fr gl hr it jp-kana nl pl pt pt-br ru sk tr uk vi zh_CN zh_TW test; do opt_set LCD_LANGUAGE $lang; echo "compile with language $lang ..."; exec_test $1 $2 "Stuff"; done
 #
 #restore_configs
 #opt_enable REPRAP_DISCOUNT_SMART_CONTROLLER SDSUPPORT
-#for lang in an bg ca zh_CN zh_TW cz da de el el-gr en es eu fi fr gl hr it jp-kana nl pl pt pt-br ru sk tr uk test; do opt_set LCD_LANGUAGE $lang; echo "compile with language $lang ..."; exec_test $1 $2 "Stuff"; done
+#for lang in an bg ca cz da de el el-gr en es eu fi fr gl hr it jp-kana nl pl pt pt-br ru sk tr uk vi zh_CN zh_TW test; do opt_set LCD_LANGUAGE $lang; echo "compile with language $lang ..."; exec_test $1 $2 "Stuff"; done
 
 ######## Example Configurations ##############
 #
