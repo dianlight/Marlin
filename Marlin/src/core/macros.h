@@ -53,15 +53,6 @@
 // Nanoseconds per cycle
 #define NANOSECONDS_PER_CYCLE (1000000000.0 / F_CPU)
 
-// Remove compiler warning on an unused variable
-#ifndef UNUSED
-  #if defined(ARDUINO_ARCH_STM32) && !defined(STM32GENERIC)
-    #define UNUSED(X) (void)X
-  #else
-    #define UNUSED(x) ((void)(x))
-  #endif
-#endif
-
 // Macros to make a string from a macro
 #define STRINGIFY_(M) #M
 #define STRINGIFY(M) STRINGIFY_(M)
@@ -70,8 +61,6 @@
 #define L(CODE) CODE ":\n\t"
 
 // Macros for bit masks
-#undef _BV
-#define _BV(n) (1<<(n))
 #define TEST(n,b) !!((n)&_BV(b))
 #define SET_BIT_TO(N,B,TF) do{ if (TF) SBI(N,B); else CBI(N,B); }while(0)
 

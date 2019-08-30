@@ -74,9 +74,6 @@
 // startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
 // build by the user have been successfully uploaded into firmware.
 #define STRING_CONFIG_H_AUTHOR "(LT,CTC Prusa I3 Pro SKR V1.3 config)" // Who made the changes.
-#define SHOW_BOOTSCREEN
-#define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
-#define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -89,10 +86,10 @@
  * respectfully request that you retain the unmodified Marlin boot screen.
  */
 
-// Enable to show the bitmap in Marlin/_Bootscreen.h on startup.
+// Show the bitmap in Marlin/_Bootscreen.h on startup.
 //#define SHOW_CUSTOM_BOOTSCREEN
 
-// Enable to show the bitmap in Marlin/_Statusscreen.h on the status screen.
+// Show the bitmap in Marlin/_Statusscreen.h on the status screen.
 //#define CUSTOM_STATUS_SCREEN_IMAGE
 
 // @section machine
@@ -918,7 +915,7 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER 37.0  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 8.0   // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -0.75 // Z offset: -below +above  [the nozzle] // -1.45 work!
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -1.45 // Z offset: -below +above  [the nozzle] // -1.45 work!
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 10
@@ -1100,7 +1097,7 @@
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
-  #define FIL_RUNOUT_INVERTING false // Set to true to invert the logic of the sensor.
+  #define FIL_RUNOUT_INVERTING true  // Set to true to invert the logic of the sensor.
   #define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN      // Use internal pulldown for filament runout pins.
 
@@ -2077,7 +2074,7 @@
 //=============================================================================
 
 //
-// FSMC display (MKS Robin, Alfawise U20, JGAurora A5S, A1, etc.)
+// FSMC display (MKS Robin, Alfawise U20, JGAurora A5S, REXYZ A1, etc.)
 //
 //#define FSMC_GRAPHICAL_TFT
 
@@ -2125,7 +2122,7 @@
 // However, control resolution will be halved for each increment;
 // at zero value, there are 128 effective control positions.
 // :[0,1,2,3,4,5,6,7]
-#define SOFT_PWM_SCALE 0
+#define SOFT_PWM_SCALE 1
 
 // If SOFT_PWM_SCALE is set to a value higher than 0, dithering can
 // be used to mitigate the associated resolution loss. If enabled,
