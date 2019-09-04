@@ -51,11 +51,7 @@
    * here we define this default string as the date where the latest release
    * version was tagged.
    */
-<<<<<<< HEAD
-  #define STRING_DISTRIBUTION_DATE "2019-08-30"
-=======
   #define STRING_DISTRIBUTION_DATE "2019-09-02"
->>>>>>> blessed/bugfix-2.0.x
 
   /**
    * Required minimum Configuration.h and Configuration_adv.h file versions.
